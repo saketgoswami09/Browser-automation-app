@@ -2,12 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
-import { UserButton } from "@clerk/nextjs"
+import { UserButton, OrganizationSwitcher } from "@clerk/nextjs"
 
 export default function Page() {
   return (
     <div className="flex min-h-svh flex-col p-6">
-      <div className="flex w-full justify-end mb-8">
+      <div className="flex w-full items-center justify-end gap-4 mb-8">
+        <OrganizationSwitcher />
         <UserButton />
       </div>
       <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
