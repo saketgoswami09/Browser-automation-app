@@ -2,10 +2,14 @@
 
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
+import { UserButton } from "@clerk/nextjs"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
+    <div className="flex min-h-svh flex-col p-6">
+      <div className="flex w-full justify-end mb-8">
+        <UserButton />
+      </div>
       <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
         <div>
           <h1 className="font-medium">Project ready!</h1>

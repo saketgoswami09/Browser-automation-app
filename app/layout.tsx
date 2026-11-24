@@ -1,6 +1,5 @@
-import { ClerkProvider, SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs"
+import { ClerkProvider } from "@clerk/nextjs"
 import { shadcn } from "@clerk/ui/themes"
-import { Suspense } from 'react'
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
@@ -34,17 +33,6 @@ export default function RootLayout({
       <body>
         <ClerkProvider appearance={{ theme: shadcn }}>
           <ThemeProvider>
-            <header className="p-4 flex justify-end gap-4 border-b">
-              <Suspense>
-                <Show when="signed-out">
-                  <SignInButton />
-                  <SignUpButton />
-                </Show>
-                <Show when="signed-in">
-                  <UserButton />
-                </Show>
-              </Suspense>
-            </header>
             {children}
             <Toaster />
           </ThemeProvider>
