@@ -10,7 +10,7 @@ interface WorkflowShellProps {
 
 export function WorkflowShell({ workflowId }: WorkflowShellProps) {
   return (
-    <ResizablePanelGroup orientation="horizontal" className="size-full">
+    <ResizablePanelGroup orientation="horizontal" className="size-full" data-workflow-id={workflowId}>
       <ResizablePanel minSize="30rem">
         <ResizablePanelGroup orientation="vertical">
           <ResizablePanel minSize="18rem">

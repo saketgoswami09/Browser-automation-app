@@ -22,7 +22,7 @@ import {
   SidebarSeparator,
   useSidebar,
 } from "@/components/ui/sidebar"
-import type { Workflow } from "@/lib/db/schema"
+import type { Workflow } from "@/features/workflows/lib/schema"
 
 interface WorkflowNavProps {
   workflows: Workflow[]
