@@ -3,6 +3,7 @@
 import { auth } from "@clerk/nextjs/server"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import { helloWorldTask } from "@/trigger/example"
 
 import { createWorkflow } from "./data"
 
@@ -17,4 +18,9 @@ export async function createWorkflowAction(name: string) {
 
   revalidatePath("/workflows", "layout")
   redirect(`/workflows/${workflow.id}`)
+}
+
+export async function runWorkflowAction(workflowId: string) {
+  await helloWorldTask.trigger({ workflowId })
+  revalidatePath(`/workflows/${workflowId}`)
 }
