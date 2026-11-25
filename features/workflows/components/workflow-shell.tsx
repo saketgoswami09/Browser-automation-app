@@ -28,7 +28,7 @@ export function WorkflowShell({ workflowId }: WorkflowShellProps) {
         </ResizablePanelGroup>
       </ResizablePanel>
       <ResizableHandle />
-      <RightSidebar workflowId={workflowId} />
+      <RightSidebar />
     </ResizablePanelGroup>
   )
 }
