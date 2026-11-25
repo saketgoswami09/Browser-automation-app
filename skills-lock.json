@@ -1,71 +1,120 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "clerk": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk/SKILL.md",
-      "computedHash": "a09b3c3fbad457bcec87f25585a0d542ed12dc03065e02ec04e27d5bed854f5a"
+      "computedHash": "f1d40a6737318e1e9f247d0c15ecb1249afb26341afcdde517e34337723287e6"
     },
     "clerk-android": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-android/SKILL.md",
-      "computedHash": "6cf80d443a4ef7615d9131b0d544a27dc1685757c1acab97ffe122f81c751802"
+      "computedHash": "3821d360b1c6ef6ae40d538c1867cbd61ac76c8ab27c6ffa23eddddb89aa9917"
     },
     "clerk-astro-patterns": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-astro-patterns/SKILL.md",
-      "computedHash": "6e5bcff4ffd55e3014325068cfae8e2f69fa21943cb35f08c751e35095c27d48"
+      "computedHash": "c4e21f7139e71afa02de3200e928321c3ac1d62cfe7dda6ac48f1845ef42a14f"
     },
     "clerk-backend-api": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-backend-api/SKILL.md",
-      "computedHash": "7eff10d876b373e731aacaa0a0d5eb9b38f21014a3da63ba766b9204b938ba45"
+      "computedHash": "9ee9a2c33cc481b01e89b1b91b4b6d210b207927353d87d6858dc96f39a23527"
     },
     "clerk-billing": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-billing/SKILL.md",
-      "computedHash": "ea0b22830e1512d43164269b3d5beb0a21708642f6a974eda9f1dcbc4d8011dc"
+      "computedHash": "c0d175b12dc1757e6e7a41afa1bf5d5194c53cce7030aaedeebbf11f0b45cd83"
     },
     "clerk-chrome-extension-patterns": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-chrome-extension-patterns/SKILL.md",
-      "computedHash": "5ec05d3c8387c4ad4ef4179de173ef456322ab08b8238df810bb23a14b06665f"
+      "computedHash": "73b414b2d765fb2c4734e399d5bed33792b80e001da22e2787a694200f7ee0f9"
     },
     "clerk-cli": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-cli/SKILL.md",
-      "computedHash": "8c5fabe6726abb34b02fd8e33aadae382dc45f634121e9b3810ec088102cea09"
+      "computedHash": "07301cc5c51149319c570fe03190295ddf559adcde445316bc240c03ee3aaae2"
     },
     "clerk-custom-ui": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-custom-ui/SKILL.md",
-      "computedHash": "0b5e1588cf47e4e402da6bc83bcfbb8a523d1810edbec24cb0f0a7c80b4bc28a"
+      "computedHash": "03296c405eb47cea2896d34f2160d18e9abd4694090b01c6428e97d9e4dd6165"
     },
     "clerk-expo": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-expo/SKILL.md",
-      "computedHash": "d734d08e8c155add9bb58efd297cfa238b99009dc4f57da1a13aae3ff7dd31ab"
+      "computedHash": "e028c2d8e9d9b1c2ad22f3337a09b486a66385294f12226387ed7e43a565d33b"
     },
     "clerk-migrate": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-migrate/SKILL.md",
-      "computedHash": "95a25429aa793e6ef0bbb8dc8c9ac7df9d5251b19cb762edc41ad5946dff8475"
+      "computedHash": "7f07fbea9b7592b6a96b2d459c2a13105435ca8d5f0ad899cf72ce19bb99e3fc"
     },
     "clerk-nextjs-patterns": {
       "source": "clerk/skills",
       "sourceType": "github",
       "skillPath": "skills/clerk-nextjs-patterns/SKILL.md",
-      "computedHash": "f81101b9005a40c7697d5e30c1021d92f0409ca639c80adfb2b10c7ebdad961d"
+      "computedHash": "5775102acceae0b132c1818a51147623da645880aa27ee2d9e3aa2a6358af357"
+    },
+    "neon": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon/SKILL.md",
+      "computedHash": "8794b9b86d45f893b2b3e71f45d4b24d56daf07b2c5ba8258c65b67411a4c688"
+    },
+    "neon-ai-gateway": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-ai-gateway/SKILL.md",
+      "computedHash": "5124cb9f0ca1417f1b185504f854360570ce2e75ad38a29615a06e66884d6dd1"
+    },
+    "neon-auth": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-auth/SKILL.md",
+      "computedHash": "81c1fdecc6bca04edc77d85379ceb21f9da5b6315217d19d83cab2fb2f068adf"
+    },
+    "neon-functions": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-functions/SKILL.md",
+      "computedHash": "6ec12cc01706f8062dfe90dc7d1d13e30089d00efe5b7cccbd8dcd80bcb20ff5"
+    },
+    "neon-object-storage": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-object-storage/SKILL.md",
+      "computedHash": "257069dffd0080b5265b9d3d2162d3e45d6581bd26d25449d8de05bb7a2ac687"
+    },
+    "neon-postgres": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-postgres/SKILL.md",
+      "computedHash": "0e1db49f25e9208cb24fa2084a542d52d60a85c09271b915acc3dad6901de6a0"
+    },
+    "neon-realtime": {
+      "source": "neondatabase/agent-skills",
+      "commit": "d3601d9e1f9398b96a1ee25047bafba5f04199eb",
+      "sourceType": "github",
+      "skillPath": "skills/neon-realtime/SKILL.md",
+      "computedHash": "7c055573fbfa784959800d81485819e51dd11f20e788a0258b84a6ab39d3cd0f"
     }
   }
 }
