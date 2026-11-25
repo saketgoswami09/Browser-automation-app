@@ -22,17 +22,22 @@ export async function createWorkflowAction(name: string) {
 }
 
 export async function runWorkflowAction(workflowId: string) {
-  const { orgId } = await auth()
+  try {
+    const { orgId } = await auth()
 
-  if (!orgId) {
-    throw new Error("No active organization")
+    if (!orgId) {
+      throw new Error("No active organization")
+    }
+
+    await tasks.trigger<typeof helloWorldTask>("hello-world", {
+      workflowId,
+      message: "Hello from right-sidebar"
+    })
+
+    revalidatePath(`/workflows/${workflowId}`)
+    return { success: true }
+  } catch (error) {
+    console.error("Failed to run workflow:", error)
+    return { success: false, error: "Failed to run workflow" }
   }
-
-  const handle = await tasks.trigger<typeof helloWorldTask>("hello-world", {
-    workflowId,
-    message: "Hello from right-sidebar"
-  })
-
-  revalidatePath(`/workflows/${workflowId}`)
-  return handle
 }
