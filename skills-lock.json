@@ -115,6 +115,48 @@
       "sourceType": "github",
       "skillPath": "skills/neon-realtime/SKILL.md",
       "computedHash": "7c055573fbfa784959800d81485819e51dd11f20e788a0258b84a6ab39d3cd0f"
+    },
+    "trigger-authoring-chat-agent": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-authoring-chat-agent/SKILL.md",
+      "computedHash": "38f24e89fd9c3b6d9c5637391f4c5eef8e3f7cbba2f676cfaff4d2b84cc8b6f6"
+    },
+    "trigger-chat-agent-advanced": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-chat-agent-advanced/SKILL.md",
+      "computedHash": "b5b27c807b130a6fc11840c7e2ae93f53bad5ba157c17ce358971cb938a326d0"
+    },
+    "trigger-cost-savings": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-cost-savings/SKILL.md",
+      "computedHash": "5576bf67e5c9387ec9ac03f40accbfe3938529fdc7633177fdc5112a55063536"
+    },
+    "trigger-realtime": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-realtime/SKILL.md",
+      "computedHash": "f422106c256757a18bfda750441bd23d32ffe4671c6c55e9028b4b26b824ec90"
+    },
+    "trigger-setup": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-setup/SKILL.md",
+      "computedHash": "5418edcd5d7cc2a3ceed7d22f772eaf30dbbeb884ded41ead649675e39670396"
+    },
+    "trigger-tasks": {
+      "source": "triggerdotdev/skills",
+      "commit": "43d4ee184f6f74b04d41710f6a73d69dc7d6616b",
+      "sourceType": "github",
+      "skillPath": "trigger-tasks/SKILL.md",
+      "computedHash": "232531635f881b3865d0dda53e596f68a491ae81c9f32937b613213e3ba6a87c"
     }
   }
 }
