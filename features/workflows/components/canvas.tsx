@@ -128,7 +128,7 @@ export function Canvas() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
-        colorMode={colorMode}
+        forceColorMode={colorMode}
         fitView
         fitViewOptions={{ padding: 0.4 }}
         proOptions={{ hideAttribution: true }}
