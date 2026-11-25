@@ -21,6 +21,7 @@ import {
   type NodeProps,
 } from "@xyflow/react"
 import { Database, Sparkles, Zap, type LucideIcon } from "lucide-react"
+import { ResizablePanel } from "@/components/ui/resizable"
 
 import "@xyflow/react/dist/style.css"
 
@@ -120,7 +121,7 @@ export function Canvas() {
   )
 
   return (
-    <div className="size-full">
+    <ResizablePanel minSize="18rem">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -167,6 +168,6 @@ export function Canvas() {
           className="!overflow-hidden !rounded-lg !border !border-border !bg-card !shadow-sm"
         />
       </ReactFlow>
-    </div>
+    </ResizablePanel>
   )
 }
