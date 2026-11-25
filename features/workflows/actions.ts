@@ -1,11 +1,12 @@
 "use server"
 
 import { auth } from "@clerk/nextjs/server"
+import { tasks } from "@trigger.dev/sdk"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import { helloWorldTask } from "@/trigger/example"
 
-import { createWorkflow } from "./data"
+import type { helloWorldTask } from "@/trigger/example"
+import { createWorkflow } from "@/features/workflows/data"
 
 export async function createWorkflowAction(name: string) {
   const { orgId } = await auth()
@@ -21,6 +22,17 @@ export async function createWorkflowAction(name: string) {
 }
 
 export async function runWorkflowAction(workflowId: string) {
-  await helloWorldTask.trigger({ workflowId })
+  const { orgId } = await auth()
+
+  if (!orgId) {
+    throw new Error("No active organization")
+  }
+
+  const handle = await tasks.trigger<typeof helloWorldTask>("hello-world", {
+    workflowId,
+    message: "Hello from right-sidebar"
+  })
+
   revalidatePath(`/workflows/${workflowId}`)
+  return handle
 }

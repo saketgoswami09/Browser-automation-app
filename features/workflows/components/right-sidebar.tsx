@@ -17,7 +17,9 @@ export function RightSidebar({ workflowId }: RightSidebarProps) {
     <ResizablePanel defaultSize="16rem" minSize="14rem" maxSize="36rem">
       <div className="flex size-full items-center justify-center p-4">
         <Button
-          onClick={() => startTransition(() => runWorkflowAction(workflowId))}
+          onClick={() => startTransition(async () => {
+            await runWorkflowAction(workflowId)
+          })}
           disabled={isPending}
         >
           <PlayIcon />
