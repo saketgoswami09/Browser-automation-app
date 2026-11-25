@@ -13,3 +13,7 @@ needed) from `lib/schema.ts` and import it. When a consumer needs only some
 columns, narrow with `Pick<Row, ...>` / `Omit<Row, ...>` rather than redeclaring a
 literal type. Don't add an insert type where `db.insert(...).values()` already
 enforces the shape.
+
+# JSX Rules
+
+- Avoid using raw apostrophes in JSX text or attributes; use `&apos;` instead to prevent linting errors.
