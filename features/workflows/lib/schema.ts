@@ -1,11 +1,4 @@
-import { pgTable, serial, text, timestamp, jsonb, uuid } from 'drizzle-orm/pg-core';
-
-export const users = pgTable('users', {
-  id: serial('id').primaryKey(),
-  name: text('name'),
-  email: text('email').unique(),
-  createdAt: timestamp('created_at').defaultNow(),
-});
+import { pgTable, text, timestamp, jsonb, uuid } from 'drizzle-orm/pg-core';
 
 export const workflows = pgTable("workflows", {
   id: uuid("id").primaryKey().defaultRandom(),

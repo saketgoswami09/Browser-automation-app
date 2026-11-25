@@ -4,7 +4,7 @@ config({ path: '.env.local' });
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
-  schema: './lib/db/schema.ts',
+  schema: './features/workflows/lib/schema.ts',
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
