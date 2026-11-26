@@ -7,9 +7,7 @@ import {
   Background,
   BackgroundVariant,
   Controls,
-  Handle,
   MiniMap,
-  Position,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -19,80 +17,35 @@ import {
   type Edge,
   type Node,
   type NodeProps,
+  type NodeTypes,
+  Handle,
+  Position,
 } from "@xyflow/react"
 import { Database, Sparkles, Zap, type LucideIcon } from "lucide-react"
-import { ResizablePanel } from "@/components/ui/resizable"
 
 import "@xyflow/react/dist/style.css"
-
-type CardData = {
-  label: string
-  description?: string
-  icon?: LucideIcon
-}
-
-type CardNodeType = Node<CardData, "card">
-
-function CardNode({ data, selected }: NodeProps<CardNodeType>) {
-  const Icon = data.icon ?? Sparkles
-
-  return (
-    <div
-      className={[
-        "w-60 rounded-xl border bg-card p-3.5 text-card-foreground shadow-sm transition-all duration-200",
-        selected
-          ? "border-primary shadow-md ring-4 ring-primary/10"
-          : "border-border hover:border-primary/40 hover:shadow-md",
-      ].join(" ")}
-    >
-      <Handle
-        type="target"
-        position={Position.Left}
-        className="!size-2.5 !border-2 !border-card !bg-primary"
-      />
-
-      <div className="flex items-start gap-3">
-        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-          <Icon className="size-4" strokeWidth={2} />
-        </div>
-        <div className="min-w-0">
-          <p className="truncate text-sm font-semibold">{data.label}</p>
-          {data.description && (
-            <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
-              {data.description}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <Handle
-        type="source"
-        position={Position.Right}
-        className="!size-2.5 !border-2 !border-card !bg-primary"
-      />
-    </div>
-  )
-}
+import { StepNode } from "./step-node"
+import { type StepNodeType } from "@/features/workflows/nodes/node-registry"
 
 // Defined outside the component so React Flow doesn't re-register on every render
-const nodeTypes = { card: CardNode }
+const nodeTypes: NodeTypes = { step: StepNode }
 
-const initialNodes: CardNodeType[] = [
+const initialNodes: StepNodeType[] = [
   {
-    id: "1",
-    type: "card",
+    id: "start",
+    type: "step",
     position: { x: 0, y: 0 },
-    data: { label: "Trigger", description: "Starts the workflow", icon: Zap },
+    data: { type: "start", kind: "trigger", title: "Start", values: {} },
   },
   {
-    id: "2",
-    type: "card",
+    id: "open-url",
+    type: "step",
     position: { x: 340, y: 0 },
-    data: { label: "Process", description: "Transforms your data", icon: Database },
+    data: { type: "open-url", kind: "action", title: "Open URL", values: { url: "https://youtube.com" } },
   },
 ]
 
-const initialEdges: Edge[] = [{ id: "e1-2", source: "1", target: "2" }]
+const initialEdges: Edge[] = [{ id: "e1-2", source: "start", target: "open-url" }]
 
 const emptySubscribe = () => () => {}
 
@@ -121,7 +74,7 @@ export function Canvas() {
   )
 
   return (
-    <ResizablePanel minSize="18rem">
+    <div className="size-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -168,6 +121,6 @@ export function Canvas() {
           className="!overflow-hidden !rounded-lg !border !border-border !bg-card !shadow-sm"
         />
       </ReactFlow>
-    </ResizablePanel>
+    </div>
   )
 }

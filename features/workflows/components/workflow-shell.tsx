@@ -15,10 +15,14 @@ export function WorkflowShell({ workflowId }: WorkflowShellProps) {
   return (
     <ResizablePanelGroup orientation="horizontal" className="size-full" data-workflow-id={workflowId}>
       <ResizablePanel minSize="30rem">
-        <ResizablePanelGroup orientation="vertical">
-          <Canvas />
+        <ResizablePanelGroup orientation="vertical" className="size-full">
+          <ResizablePanel minSize="18rem">
+            <Canvas />
+          </ResizablePanel>
           <ResizableHandle />
-          <Logs />
+          <ResizablePanel defaultSize="8rem" minSize="6rem">
+            <Logs />
+          </ResizablePanel>
         </ResizablePanelGroup>
       </ResizablePanel>
       <ResizableHandle />

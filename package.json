@@ -22,7 +22,7 @@
     "@neon/env": "^2.1.10",
     "@neondatabase/serverless": "^1.2.1",
     "@shadcn/react": "^0.3.1",
-    "@trigger.dev/react-hooks": "^4.8.10",
+    "@trigger.dev/react-hooks": "4.8.10",
     "@trigger.dev/sdk": "4.8.10",
     "@xyflow/react": "^13.0.3",
     "class-variance-authority": "^0.7.1",
