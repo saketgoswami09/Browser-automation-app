@@ -22,6 +22,9 @@ export async function AppSidebar() {
       <SidebarHeader className="flex-row items-center justify-between group-data-[state=collapsed]:justify-center">
         <div className="flex-1 min-w-0 group-data-[state=collapsed]:hidden overflow-hidden shrink-0">
           <OrganizationSwitcher
+          afterCreateOrganizationUrl="/"
+          afterSelectOrganizationUrl="/"
+          afterLeaveOrganizationUrl="/"
             hidePersonal
             appearance={{
               elements: {

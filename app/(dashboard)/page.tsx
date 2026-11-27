@@ -1,5 +1,6 @@
 "use client"
 
+import { useTransition } from "react"
 import { Button } from "@/components/ui/button"
 import { MousePointerSquareDashed } from "lucide-react"
 import {
@@ -10,8 +11,17 @@ import {
   EmptyContent,
   EmptyMedia,
 } from "@/components/ui/empty"
+import { createWorkflowAction } from "@/features/workflows/actions"
 
 export default function Page() {
+  const [isPending, startTransition] = useTransition()
+  
+  const handleCreateWorkflow = () => {
+    startTransition(() => {
+      createWorkflowAction("New Workflow")
+    })
+  }
+
   return (
     <div className="flex min-h-svh flex-col p-6">
       <Empty className=" flex-1">
@@ -25,10 +35,13 @@ export default function Page() {
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent>
-          <Button>Create workflow</Button>
+          <Button onClick={handleCreateWorkflow} disabled={isPending}>
+            {isPending ? "Creating..." : "Create workflow"}
+          </Button>
         </EmptyContent>
       </Empty>
     </div>
   )
 }
+
 
