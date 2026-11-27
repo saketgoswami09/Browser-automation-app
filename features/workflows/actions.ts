@@ -42,8 +42,15 @@ export async function deleteWorkflowAction(id: string) {
 
   await deleteWorkflow(orgId, id)
 
+  // Also delete the Liveblocks room
+  try {
+    await liveblocks.deleteRoom(id)
+  } catch (error) {
+    console.error("Failed to delete Liveblocks room:", error)
+  }
+
   revalidatePath("/workflows", "layout")
-  redirect("/workflows")
+  redirect("/")
 }
 
 
