@@ -1,3 +1,4 @@
+import { ReactFlowProvider } from "@xyflow/react"
 import {
   ResizableHandle,
   ResizablePanel,
@@ -13,20 +14,22 @@ interface WorkflowShellProps {
 
 export function WorkflowShell({ workflowId }: WorkflowShellProps) {
   return (
-    <ResizablePanelGroup orientation="horizontal" className="size-full" data-workflow-id={workflowId}>
-      <ResizablePanel minSize="30rem">
-        <ResizablePanelGroup orientation="vertical" className="size-full">
-          <ResizablePanel minSize="18rem">
-            <Canvas />
-          </ResizablePanel>
-          <ResizableHandle />
-          <ResizablePanel defaultSize="8rem" minSize="6rem">
-            <Logs />
-          </ResizablePanel>
-        </ResizablePanelGroup>
-      </ResizablePanel>
-      <ResizableHandle />
-      <RightSidebar />
-    </ResizablePanelGroup>
+    <ReactFlowProvider>
+      <ResizablePanelGroup orientation="horizontal" className="size-full" data-workflow-id={workflowId}>
+        <ResizablePanel minSize="30rem">
+          <ResizablePanelGroup orientation="vertical" className="size-full">
+            <ResizablePanel minSize="18rem">
+              <Canvas />
+            </ResizablePanel>
+            <ResizableHandle />
+            <ResizablePanel defaultSize="8rem" minSize="6rem">
+              <Logs />
+            </ResizablePanel>
+          </ResizablePanelGroup>
+        </ResizablePanel>
+        <ResizableHandle />
+        <RightSidebar workflowId={workflowId} />
+      </ResizablePanelGroup>
+    </ReactFlowProvider>
   )
 }

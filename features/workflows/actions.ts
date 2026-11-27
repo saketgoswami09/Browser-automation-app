@@ -7,7 +7,7 @@ import { redirect } from "next/navigation"
 import { liveblocks } from "@/lib/liveblocks"
 
 import type { helloWorldTask } from "@/trigger/example"
-import { createWorkflow } from "@/features/workflows/data"
+import { createWorkflow, deleteWorkflow } from "@/features/workflows/data"
 
 export async function createWorkflowAction(name: string) {
   const { orgId } = await auth()
@@ -33,6 +33,19 @@ export async function createWorkflowAction(name: string) {
   revalidatePath("/workflows", "layout")
   redirect(`/workflows/${workflow.id}`)
 }
+export async function deleteWorkflowAction(id: string) {
+  const { orgId } = await auth()
+
+  if (!orgId) {
+    throw new Error("No active organization")
+  }
+
+  await deleteWorkflow(orgId, id)
+
+  revalidatePath("/workflows", "layout")
+  redirect("/workflows")
+}
+
 
 export async function runWorkflowAction() {
   const { orgId } = await auth()
